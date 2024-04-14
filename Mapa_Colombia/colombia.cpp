@@ -11,7 +11,9 @@ int main{
 
 //Los mapas simepre tomaran pares de valores.
 map<string, string > colombia;
-
+//Recordar que nunca se repetiran los datos first, en este caso, los departamentos.
+//El dato first, permite buscar mediante ella.
+//El dato second o segundo, es quien acompaña a la llave (first).
 colombia.insert( par1("Amazonas","Leticia"));
 colombia.insert( par1("Antioquia","Medellin"));
 colombia.insert( par1("Arauca","Arauca"));
