@@ -30,6 +30,8 @@ void mostrarNota(map<string, set<string>> estudiante, map<string, float> asignat
 {
 
     string nombre;
+    string asignatura;
+
     cout << "Ingrese el nombre del estudiante para conocer la nota de una asignatura especifica: " << endl;
     cin >> nombre;
     map<string, set<string>>::iterator i = estudiante.find(nombreEstudiante);
@@ -41,8 +43,20 @@ void mostrarNota(map<string, set<string>> estudiante, map<string, float> asignat
             // Aqui se imprimira la asignatura.
             cout << asignatura << endl;
         }
+        cout<<"Ingrese la asignstura de la cual desea conocer la nota: "<<endl;
+        cin>> asignatura ;
+        map<string, float>::iterator i = asignaturas.find(asignatura);
+        //Decir que si existe la nota (true)
+        if (i != asignaturas.end())
+        {
+        cout<<"Nota del estudiante: " << i->second << endl;
+        cout<<"El nombre del estudainte es: "<< nombre <<"Las asignaturas del estudiante son: "<< asignatura <<"La nota del estudiante es: "<< i->second <<endl;
+
+        }
+        
     }
 }
+
 
 int main()
 {
