@@ -1,9 +1,11 @@
 #include <iostream>
 #include <map>
+#include <set>
 using namespace std;
 
 // typedef, se usa para simplificar el codigo.
-typedef pair<string, string> par1;
+typedef pair<string, set<string>> par1;
+typedef pair<string, float> par2;
 
 // Función para Registrar una Nota.
 void registrarNota(map<string, set<string>> estudiante, map<string, float> asignaturas)
@@ -20,15 +22,16 @@ void registrarNota(map<string, set<string>> estudiante, map<string, float> asign
     cin >> notaEstudiante;
 
     // Agrega nombre del estudiante y nombre de la asignatura al MAP estudiante.
-    estudiante.insert(pair1(nombreEstudiante, {nombreAsignatura}))
-        // Agrega nombre de la asignatura y nota del estudiante al MAP asignaturas.
-        asignaturas.insert(pair1(nombreAsignaturas, notaEstudiante))
+    estudiante.insert(par1(nombreEstudiante, {nombreAsignatura}));
+    // Agrega nombre de la asignatura y nota del estudiante al MAP asignaturas.
+    asignaturas.insert(par2(nombreAsignatura, notaEstudiante));
 }
 
 // Función para Mostrar la nota de una asignatura especifica de un estudiante especifico.
 void mostrarNota(map<string, set<string>> estudiante, map<string, float> asignaturas)
 {
 
+    string nombreEstudiante;
     string nombre;
     string asignatura;
 
